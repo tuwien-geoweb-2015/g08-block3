@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.10.1/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 100px;
+        width: 100%;
+     }
+      html, body {
+        height: 100%;
+        margin: 0;
+        }
+      div.full {
+      width: 10%;
+      height: 10%;
+      }
+    </style>
+    <script src="http://openlayers.org/en/v3.10.1/build/ol.js" type="text/javascript"></script>
+    <title>Scariest places on earth</title>
+  </head>
+  <body>
+    <table width="95%"   border="1" cellspacing="0" cellpadding="0" bgcolor="#E3F6CE"   >
+    <tr>
+      <td width="60%"  >
+        <p>
+        <div  id="map" class="grid"></div>
+        <script width="80%" type="text/javascript"  >
+        var map = new ol.Map({
+          target: 'map',
+          layers: [
+            new ol.layer.Tile({
+              source: new ol.source.MapQuest({layer: 'sat'})
+            }),
+            new ol.layer.Vector({
+              source: new ol.source.Vector({
+              format: new ol.format.GeoJSON(),
+              url:  'https://gist.githubusercontent.com/Hoebi/548432a8d12f1ee74887/raw/813d783e302c9cccea112ff4786e96f9c2ddb3a8/map.geojson '
+            })
+          })
+          ],
+          view: new ol.View({
+            center: ol.proj.fromLonLat([0.0, 40.200]),
+            zoom: 2.5
+          })
+        });
+        </script>
+        <p>
+      </td>
+      <td>
+        <font color="#0B3B0B" face="Arial" style="font-size: 14pt"><i><u>Gruppeninfo</u></i></font></p>  </b>
+        <font color="#0B3B0B" face="Arial" style="font-size: 9pt">Andreas Hoebausz (1125648)<br> Lukas Persterer (1126770) </font>
+        <font color="#0B3B0B" face="Arial" style="font-size: 14pt"><i><u><p>The scariest places on Earth !</u></i></font></p>
+        <font color="#0B3B0B" face="Arial" style="font-size: 9pt">
+            <u><b>Tunguska</u></b> <p>
+            Das Tunguska-Ereignis bestand aus einer oder mehreren sehr grossen Explosionen
+            am 30. Juni 1908 im sibirischen Gouvernement Jenisseisk, der heutigen Region Krasnojarsk, deren Ursache sich bisher nicht zweifelsfrei klaeren liess. <p>
+            Als wahrscheinlichste Ursache gilt zurzeit der Eintritt eines Asteroiden oder eines Kometen in die Erdatmosphaere.
+            Nach neueren Erkenntnissen ist auch eine vulkanische Eruption nicht auszuschliessen.
+            <p><p>
+            <u><b>Bermudadreieck</u></b><p>
+            Das Bermudadreieck, auch Teufelsdreieck genannt, ist die Bezeichnung eines Seegebietes,
+            das sich im westlichen Atlantik noerdlich der Karibik befindet.<p>
+            Durch mehrere tatsaechlich oder vermeintlich mit der Gegend zusammenhaengende
+            Schiffs- und Flugzeugkatastrophen erhielt das Bermudadreieck den Ruf, dort spielten sich gehaeuft
+            entsprechende Ungluecke ab oder dort verschwaenden gar Schiffe und/oder Flugzeuge.<p>
+            Dabei wurden zum Teil Ungluecke gezaehlt, die sich im Bermudadreieck abgespielt hatten
+            , zum Teil aber auch Vorgaenge, die nur in der Naehe stattfanden oder bei denen Schiffe
+            das Dreieck nur zuvor durchfahren hatten. <P>
+
+        </font>
+      </td>
+    </tr>
+    </table>
+  </body>
+</html>
